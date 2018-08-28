@@ -4,7 +4,7 @@ GEO Protocol is a decentralized p2p protocol that uses state channels and trust 
 The protocol works without blockchain and is able to connect different ledgers. Initially, that was an original Ripple's idea, but we have improved it by adding state channels due to blockchain technology progress
 
 ###### Read more in GEO Protocol [Whitepaper](https://docs.google.com/document/d/1jraVxOYRJYvQP_bI4_u_J3-tKQZxWV3I5YxixqxkIHM/edit)
-
+(http://geoprotocol.tilda.ws/) — Website
 
 ## How It Works?
 A stack of protocols using a number of high-tech algorithms for connections search and clearing among system participants in a distributed decentralized network. Technically, the system is designed and implemented as a peer-to-peer network, in which the entire spectrum of computing and security functions is distributed among users' devices. It has a number of essential components and elements, which are the basis for numerous solutions and use cases development:
@@ -27,12 +27,17 @@ Use Case | Description
 **IoT&nbsp;solutions** | P2P protocol enabling the scalable, secure, private and high trusted method to perform IoT transactions with participation of unlimited number of nodes.
 **Mobile&nbsp;money&nbsp;operators&nbsp;transactions&nbsp;(protocol level)** | P2P transaction protocol using SMS or any mobile app to perform transfer of funds. Nodes can be represented by phone numbers. The access to all online services is provided via duplication of accounts to the online distributed ledger.
 
-###### Stay tuned and join our media channels:
+## How can i follow news and updates?
 
-(http://geoprotocol.tilda.ws/) — Website
+To monitor the progress of our project follow our medias:
 
 (https://medium.com/@geoprotocol) — Medium
 
 (https://www.linkedin.com/company/geoprotocol/) — LinkedIn 
 
 (https://twitter.com/people_geo) — Twitter
+
+## Where can i reach your team or ask question?
+
+To contact our team members or participate in discussions follow our Telegram (link) or Gitter (link)
+
