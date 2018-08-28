@@ -19,13 +19,13 @@ A stack of protocols using a number of high-tech algorithms for connections sear
 ## How you can use protocol?
 Use Case | Description
 --- | ---
-**Payment solutions** | Non-blockchain, fast, real-time, double-spending resistant, distributed multi-attendee payment crypto- protocol with time predictable 100% participants consensus. GEO protocol helps users safely send and receive payments in P2P marketplaces. It greatly enhances the buying/selling process with decentralized escrow for secure payments, third party dispute resolution, and very low transaction costs.
-**Loyalty programs** | We are providing a platform for building loyalty programs and developer interface, enabling customization of loyalty application for any request. Using GEO protocol brands will benefit from simple development and customization, low management costs and the elimination of liabilities associated with unredeemed points.
-**Rating systems and delegated democracy** | The transitivity of trust reflects the amount of value that can be trusted to a node. It has a numeric measurement so the platform gives a tool to evaluate the rate or amount of trust, loyalty or support.
-**Clearing systems** | Possibility to implement the automatic clearing with elimination of double expenditure up to 6 participants in a chain
-**Interoperability protocol** | Geo protocol can act as a cross-chain protocol enabling interaction and interoperability among different blockchains. This makes instant payments across a network of participants easy and cheap.
-**IoT solutions** | P2P protocol enabling the scalable, secure, private and high trusted method to perform IoT transactions with participation of unlimited number of nodes.
-**Mobile money operators transactions (protocol level)** | P2P transaction protocol using SMS or any mobile app to perform transfer of funds. Nodes can be represented by phone numbers. The access to all online services is provided via duplication of accounts to the online distributed ledger.
+**Payment&nbsp;solutions** | Non-blockchain, fast, real-time, double-spending resistant, distributed multi-attendee payment crypto- protocol with time predictable 100% participants consensus. GEO protocol helps users safely send and receive payments in P2P marketplaces. It greatly enhances the buying/selling process with decentralized escrow for secure payments, third party dispute resolution, and very low transaction costs.
+**Loyalty&nbsp;programs** | We are providing a platform for building loyalty programs and developer interface, enabling customization of loyalty application for any request. Using GEO protocol brands will benefit from simple development and customization, low management costs and the elimination of liabilities associated with unredeemed points.
+**Rating&nbsp;systems&nbsp;and&nbsp;delegated&nbsp;democracy** | The transitivity of trust reflects the amount of value that can be trusted to a node. It has a numeric measurement so the platform gives a tool to evaluate the rate or amount of trust, loyalty or support.
+**Clearing&nbsp;systems** | Possibility to implement the automatic clearing with elimination of double expenditure up to 6 participants in a chain
+**Interoperability&nbsp;protocol** | Geo protocol can act as a cross-chain protocol enabling interaction and interoperability among different blockchains. This makes instant payments across a network of participants easy and cheap.
+**IoT&nbsp;solutions** | P2P protocol enabling the scalable, secure, private and high trusted method to perform IoT transactions with participation of unlimited number of nodes.
+**Mobile&nbsp;money&nbsp;operators&nbsp;transactions&nbsp;(protocol level)** | P2P transaction protocol using SMS or any mobile app to perform transfer of funds. Nodes can be represented by phone numbers. The access to all online services is provided via duplication of accounts to the online distributed ledger.
 
 ###### Stay tuned and join our media channels:
 
