@@ -29,6 +29,9 @@ Use Case | Description
 
 ###### Stay tuned and join our media channels:
 [<img src="https://camo.githubusercontent.com/aebd3cdcab53bdc6fbd1362bcc78a0812677c627/68747470733a2f2f706174726f6c617669612e6769746875622e696f2f74656c656772616d2d62616467652f666f6c6c6f772e706e67">](http://geoprotocol.tilda.ws/) — Official Website
+
 [<img src="https://camo.githubusercontent.com/aebd3cdcab53bdc6fbd1362bcc78a0812677c627/68747470733a2f2f706174726f6c617669612e6769746875622e696f2f74656c656772616d2d62616467652f666f6c6c6f772e706e67">](https://medium.com/@geoprotocol) - official Medium profile
+
 [<img src="https://camo.githubusercontent.com/aebd3cdcab53bdc6fbd1362bcc78a0812677c627/68747470733a2f2f706174726f6c617669612e6769746875622e696f2f74656c656772616d2d62616467652f666f6c6c6f772e706e67">](https://www.linkedin.com/company/geoprotocol/) - Organization's LinkedIn profile
+
 [<img src="https://camo.githubusercontent.com/aebd3cdcab53bdc6fbd1362bcc78a0812677c627/68747470733a2f2f706174726f6c617669612e6769746875622e696f2f74656c656772616d2d62616467652f666f6c6c6f772e706e67">](https://twitter.com/people_geo) - Our Twitter
