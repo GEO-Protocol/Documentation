@@ -26,17 +26,3 @@ Use Case | Description
 **IoT&nbsp;solutions** | P2P protocol enabling the scalable, secure, private and high trusted method to perform IoT transactions with participation of unlimited number of nodes.
 **Mobile&nbsp;money&nbsp;operators&nbsp;transactions&nbsp;(protocol level)** | P2P transaction protocol using SMS or any mobile app to perform transfer of funds. Nodes can be represented by phone numbers. The access to all online services is provided via duplication of accounts to the online distributed ledger.
 
-## How you can follow news and updates?
-
-To monitor the progress of our project follow our media:
-
-(https://medium.com/@geoprotocol) — Medium
-
-(https://www.linkedin.com/company/geoprotocol/) — LinkedIn 
-
-(https://twitter.com/people_geo) — Twitter
-
-## Where you can reach our team and ask questions?
-
-To contact our team members or participate in discussions follow our Telegram (link) or Gitter (link)
-
