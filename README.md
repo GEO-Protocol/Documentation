@@ -5,4 +5,3 @@ The protocol works without blockchain and is able to connect different ledgers. 
 
 ###### For more information visit [Website](http://geoprotocol.tilda.ws/) or read [Whitepaper](https://docs.google.com/document/d/1jraVxOYRJYvQP_bI4_u_J3-tKQZxWV3I5YxixqxkIHM/edit)
 
-
