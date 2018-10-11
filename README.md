@@ -12,7 +12,7 @@ There are 4 algorithms used in GEO Protocol so far:
 3. Routing algorithm
 4. Cyclic clearing algorithm
 
-Recently we published first specification
+Recently we published [first specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)
 
 
-###### Useful links (will update regularly): [Website](https://geoprotocol.io/), [Whitepaper](https://drive.google.com/file/d/1Cd3CExvwWjTR_mLhHx-HeRvxqw8wUhFJ/view), [Transaction processing algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)
+
