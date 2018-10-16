@@ -12,7 +12,7 @@ The protocol works without blockchain and uses off-chain solutions that provide 
 Our purpose is to make value exchange as simple as sending email. 
 For more information visit our [Website](https://geoprotocol.io/), or read the [Whitepaper](https://drive.google.com/file/d/1Cd3CExvwWjTR_mLhHx-HeRvxqw8wUhFJ/view)
 
-**_There are 4 algorithms used in GEO Protocol:_**
+*There are 4 algorithms used in GEO Protocol:*
 1. Payment algorithm
 2. Calculation of payment possibilities algorithm
 3. Routing algorithm
