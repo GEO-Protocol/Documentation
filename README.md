@@ -3,12 +3,14 @@
 [Whitepaper](https://drive.google.com/file/d/10FrJI2Z_Hos0FV7wpUgrPfMJTjNb-fGA/view)                                                                
 [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)
 
-[](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)
+[Trust lines algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)
 
 # GEO Protocol
 
-GEO Protocol is a decentralized p2p protocol that uses state channels and trust lines technologies and implements its own routing algorithm as well. 
-The protocol works without blockchain and is able to connect different ledgers. Initially, that was an original Ripple's idea, but we have improved it by adding state channels due to blockchain technology progress
+GEO Protocol is a decentralized p2p protocol for values exchange that uses state channels and trust lines technologies and implements its own routing algorithm as well. 
+This is a protocol that is able to build a global decentralized P2P network which connects different ledgers.
+The protocol works without blockchain and uses off-chain solutions that provide scalability of the network. 
+Our purpose is to make value exchange as simple as sending email. 
 For more information visit our [Website](https://geoprotocol.io/), or read the [Whitepaper](https://drive.google.com/file/d/1Cd3CExvwWjTR_mLhHx-HeRvxqw8wUhFJ/view)
 
 **_There are 4 algorithms used in GEO Protocol:_**
