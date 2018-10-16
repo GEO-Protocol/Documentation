@@ -1,8 +1,6 @@
-###### Useful links:
+## Useful links:
 [Website](https://geoprotocol.io/)
-
 [Whitepaper](https://drive.google.com/file/d/1Cd3CExvwWjTR_mLhHx-HeRvxqw8wUhFJ/view)
-
 [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)
 
 # GEO Protocol
