@@ -19,10 +19,12 @@ For more information visit our [Website](https://geoprotocol.io/), or read the [
 4. Cyclic clearing algorithm
 
 **_Update for 12.10.2018_**
+
 We published [specification for payment algorithm](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md) which called *Twin Spark*.
 Proposed solution provides ability for up to several hundreds participants to achieve 100% consensus via communications through potentially unstable and untrusted environment, under active fraud attempts of malicious participants.
 
 **_Update for 15.10.2018_**
+
 We published [specification that describes the trust lines algorithm](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md) which called *Twin State*.
 Proposed solution provides ability for 2 participants to share common state of a trust line / channel and syncronise it with quantum resistant proof of operations performed.
 
