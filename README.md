@@ -1,7 +1,7 @@
 
 # Useful links:
 
-[Website](https://geoprotocol.io/) 
+* [Website](https://geoprotocol.io/) 
 
 ### Community:
                                                                                                              
