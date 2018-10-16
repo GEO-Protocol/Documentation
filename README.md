@@ -1,6 +1,11 @@
-# Useful links:
 
-[Website](https://geoprotocol.io/)                                                                                                          
+# Useful links:
+### Community:
+[Website](https://geoprotocol.io/)                                                                                                              
+[Medium](https://medium.com/geoprotocol)                                                                                                    
+[Twitter](https://twitter.com/geo_protocol)                                                                                                     
+[LinkedIn](https://www.linkedin.com/company/geoprotocol/)   
+### Technical Documentation
 [Whitepaper](https://drive.google.com/file/d/10FrJI2Z_Hos0FV7wpUgrPfMJTjNb-fGA/view)                                                                
 [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)                    
 [Trust lines algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)
