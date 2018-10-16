@@ -1,8 +1,7 @@
 ## Useful links:
 [Website](https://geoprotocol.io/)                                                                                                          
 [Whitepaper](https://drive.google.com/file/d/10FrJI2Z_Hos0FV7wpUgrPfMJTjNb-fGA/view)                                                                
-[Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)
-
+[Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)                    
 [Trust lines algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)
 
 # GEO Protocol
