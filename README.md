@@ -13,6 +13,7 @@
 * [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)                    
 * [Trust lines algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)
 
+
 # GEO Protocol
 
 GEO Protocol is a decentralized p2p protocol for values exchange that uses state channels and trust lines technologies and implements its own routing algorithm as well. 
@@ -26,6 +27,9 @@ For more information visit our [Website](https://geoprotocol.io/), or read the [
 2. Calculation of payment possibilities algorithm
 3. Routing algorithm
 4. Cyclic clearing algorithm
+
+**_Update 18.10.2018_** /
+We uploaded C++implementation of [Lamport Signature](https://en.wikipedia.org/wiki/Lamport_signature) on top of BLAKE2b. Now you can take a look or download it by clicking [here](https://github.com/GEO-Protocol/lib-crypto-lamport). Current cryptographic sollution is used in [GEO Network client](https://github.com/GEO-Protocol/GEO-network-client) and [observers chain backend](https://github.com/GEO-Protocol/gns-observers-chain-back). 
 
 **_Update 15.10.2018_** / 
 We published [specification that describes the trust lines algorithm](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md) which called *Twin State*.
