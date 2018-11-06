@@ -39,6 +39,15 @@ Proposed solution provides ability for 2 participants to share common state of a
 We published [specification for payment algorithm](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md) which called *Twin Spark*.
 Proposed solution provides ability for up to several hundreds participants to achieve 100% consensus via communications through potentially unstable and untrusted environment, under active fraud attempts of malicious participants.
 
+### Specifications in progress
+**_Current section will contain steps of further GEO Protocol develpment. Sorted by priority_**
 
-
+1. *Finalization of documentation regarding payments*;
+2. *Overview of used cryptographic solutions*;
+3. *Tokenomy* (economic model, tokens circulation);
+4. *Observers* (functions, connections, edge cases everview etc);
+5. *Trust lines* (finalization);
+6. *Ping/Pong* (the mechanism of notifications within the Protocol);
+7. *Routing* (algorithm description, calculations);
+8. *Cycles*
 
