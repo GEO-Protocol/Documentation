@@ -42,7 +42,7 @@ Proposed solution provides ability for up to several hundreds participants to ac
 ### Specifications in progress
 **_Current section will contain steps of further GEO Protocol develpment. Sorted by priority_**
 
-1. *Finalization of documentation regarding payments*;
+1. *Completion of documentation related to payments*;
 2. *Overview of used cryptographic solutions*;
 3. *Tokenomy* (economic model, tokens circulation);
 4. *Observers* (functions, connections, edge cases everview etc);
