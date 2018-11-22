@@ -4,7 +4,8 @@
 * [Website](https://geoprotocol.io/) 
 
 ### Community:
-                                                                                                             
+* [Gitter](https://gitter.im/GEO_Protocol/Lobby)  
+  
 * [Medium](https://medium.com/geoprotocol)                                                                                                    
 * [Twitter](https://twitter.com/geo_protocol)                                                                                                     
 * [LinkedIn](https://www.linkedin.com/company/geoprotocol/)   
