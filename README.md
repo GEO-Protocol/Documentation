@@ -5,10 +5,8 @@
 
 ### Community:
 * [Gitter](https://gitter.im/GEO_Protocol/Lobby)  
-  
-* [Medium](https://medium.com/geoprotocol)                                                                                                    
-* [Twitter](https://twitter.com/geo_protocol)                                                                                                     
-* [LinkedIn](https://www.linkedin.com/company/geoprotocol/)   
+* [Medium](https://medium.com/geoprotocol)                                                                                             
+* [Twitter](https://twitter.com/geo_protocol)                                                                                            * [LinkedIn](https://www.linkedin.com/company/geoprotocol/)   
 ### Technical Documentation:
 * [Whitepaper](https://github.com/GEO-Protocol/Documentation/blob/master/GEO_Protocol_WP.pdf)                                                                
 * [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)                    
