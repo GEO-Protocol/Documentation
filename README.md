@@ -9,6 +9,7 @@
 * [Medium](https://medium.com/geoprotocol)                                                                                             
 * [Twitter](https://twitter.com/geo_protocol)                                                                                          
 * [LinkedIn](https://www.linkedin.com/company/geoprotocol/) 
+* [Facebook](https://www.facebook.com/GeoProtocol/)
 
 ### Technical Documentation:
 * [Whitepaper](https://github.com/GEO-Protocol/Documentation/blob/master/GEO_Protocol_WP.pdf)                                          
