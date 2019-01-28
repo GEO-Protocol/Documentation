@@ -17,6 +17,8 @@
 * [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)           
 * [Trust lines algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)         
 * [C++ implementation of Lamport One Time Signature](https://github.com/GEO-Protocol/lib-crypto-lamport)
+* [GEO Service Registry (GSR)](https://github.com/GEO-Protocol/specs-gsr/blob/master/specs/gsr.md)
+* [GEO Voting Service (GVS)](https://github.com/GEO-Protocol/specs-gsr/blob/master/specs/gvs.md)
 
 # GEO Protocol
 
