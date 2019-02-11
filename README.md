@@ -13,7 +13,6 @@
 * [YouTube](https://www.youtube.com/c/GEOProtocol)
 
 ### Technical Documentation:
-* [Whitepaper](https://github.com/GEO-Protocol/Documentation/blob/master/GEO_Protocol_WP.pdf)                                          
 * [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)           
 * [Trust lines algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)         
 * [C++ implementation of Lamport One Time Signature](https://github.com/GEO-Protocol/lib-crypto-lamport)
@@ -26,7 +25,7 @@ GEO Protocol is a decentralized p2p protocol for values exchange that uses state
 This is a protocol that is able to build a global decentralized P2P network which connects different ledgers.
 The protocol works without blockchain and uses off-chain solutions that provide scalability of the network. 
 Our purpose is to make value exchange as simple as sending email. 
-For more information visit our [Website](https://geoprotocol.io/), or read the [Whitepaper](https://github.com/GEO-Protocol/Documentation/blob/master/GEO_Protocol_WP.pdf)
+For more information visit our [Website](https://geoprotocol.io/)
 
 *There are 4  core algorithms used in GEO Protocol:*
 1. Payment algorithm
