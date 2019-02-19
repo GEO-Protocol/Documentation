@@ -11,6 +11,7 @@ The Protocol itself is our main product. We create a framework which enables bus
 GEO Protocol solution is based on 2 main ideas which in short can be described as follows:
 
 *Idea 1:* Creation of the network that can connect not only existing blockchain ecosystems but also the traditional finance ecosystem. It will solve the problem of [interoperability](https://hackernoon.com/the-need-for-layer-3-on-the-internet-of-value-85ae3ab2a9ea)
+
 *Idea 2:* Creation of the network, where participants could transfer value in the form of equivalents. It could be backed asset equivalents and non-backed asset equivalents, which in fact obligations (IOU). It will solve problems of the existing monetary system.
 
 ### How your idea is similar to the original Ryan Fuger's idea?
