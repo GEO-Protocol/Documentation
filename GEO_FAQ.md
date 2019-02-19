@@ -48,18 +48,18 @@ Payment Algorithm (link on YouTube video). It is responsible for the actual tran
 Cyclic Clearing algorithm (link on YouTube video). It seeks for any debt cycles and closes them
 Another key technical feature, which we are planning to introduce in next release, is the ability to connect nodes with composite channels.
 
-**What is a composite channel?**
+**11. What is a composite channel?**
 
 It is a type of connection between 2 nodes when both trustlines and state channels are used. 
 
-**What is a trustline?**
+**12. What is a trustline?**
 
 Trustline is a connection between 2 nodes which allows them to account and transfer values between each other transfer value to each other. To get more information read our article (link) or watch a video (link) where our CTO explains the mechanics of trustlines
 
-**What is a state channel?**
+**13. What is a state channel?**
 
 State channel is a type of connection that allows making fast, safe and trustless offchain transactions between two accounts from one blockchain ecosystem. However, cryptoasset is backed on the channel by onchain transactions
 
-**Can I transfer any physical assets within the network?**
+**14. Can I transfer any physical assets within the network?**
 
 GEO Protocol enables free transfer of any assets or value in the network. Network participants can transfer both, backed asset equivalents and credit obligations (IOU). These are not physical assets, but they could be backed by custodian or state channels.
