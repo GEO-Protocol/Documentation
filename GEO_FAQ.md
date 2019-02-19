@@ -3,7 +3,6 @@
 GEO is a p2p transfer protocol for the decentralized network of assets
 
 **What is your goal?**
-
 Our goal is to create a truly distributed network for transfer values. Just like sending the information within the Internet 
 
 **What is your product?**
