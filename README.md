@@ -2,6 +2,7 @@
 # Useful links:
 
 * [Website](https://geoprotocol.io/) 
+* [FAQ](https://github.com/GEO-Protocol/Documentation/blob/master/GEO_FAQ.md)
 
 ### Community:
 * [Telegram](https://t.me/geoprotocol)  
