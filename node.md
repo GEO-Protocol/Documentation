@@ -120,9 +120,27 @@ You can find the latest images with latest node build in [GEO Network Client rep
 We would need SSH session to manipulate the nodes, so the WM should accept incoming TCP connections. <br/>
 The simples way to achieve it is to configure NAT Ports Forwarding for the destination WM.
 
-![wm_network_settings_1.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_1.png)
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_1.png">
+	VirtualBox Network Adapter Settings
+</p>
+<br/>
+<br/>
 
-![wm_network_settings_2.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_2.png)
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_2.png">
+	Pord Forwarding Settings
+</p>
+<br/>
+<br/>
+
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/ssh_1.png">
+	SSH into the WM
+</p>
+<br/>
+<br/>
+
 
 ## Network topology
 In this tutorial we would use 3 nodes: `node1`, `node2`, `node3`. <br/>
