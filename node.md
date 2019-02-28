@@ -36,6 +36,9 @@ The protocol itself is expected to support dynamically formed observers list, pr
 
 Configuration file is named `conf.json`. <br/> 
 It is required to be located **on the same FS level** as `geo_network_client`. </br>
+![node_settings_fs_level.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/node_settings_fs_level.png)
+
+
 The configuration file must contain addresses information of the node – `addresses`: 
 all the addresses that identify the node (including ports, if related) and their types, as well as the list of the [Observers](https://github.com/GEO-Protocol/Observer) – `observers`. <br/>
 <br/>
@@ -78,7 +81,7 @@ _Configuration for the BETA1 test net:_
 }
 ```
 </br>
-The node’s addresses will be used to identify the node and they will be stored at other nodes with which the current node will communicate in either way: opening a trustline – TL, making payments, etc. Therefore, changing the address of the node after it has already opened some TLs will lead to incorrect work with the corresponding nodes.```
+The node’s addresses will be used to identify the node and they will be stored at other nodes with which the current node will communicate in either way: opening a trustline – TL, making payments, etc. Therefore, changing the address of the node after it has already opened some TLs will lead to incorrect work with the corresponding nodes.
 
 
 </br>
