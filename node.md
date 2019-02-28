@@ -37,9 +37,9 @@ The protocol itself is expected to support dynamically formed observers list, pr
 Configuration file is named `conf.json`. <br/> 
 It is required to be located **on the same FS level** as `geo_network_client`. </br>
 The configuration file must contain addresses information of the node – `addresses`: 
-all the addresses that identify the node (including ports, if related) and their types, as well as the list of the [Observers](https://github.com/GEO-Protocol/Observer) – `observers`.
-
-Example configuration for the BETA1 Test net. is provided further. </br>
+all the addresses that identify the node (including ports, if related) and their types, as well as the list of the [Observers](https://github.com/GEO-Protocol/Observer) – `observers`. <br/>
+<br/>
+In the current version of the node only one type of addressing is supported – ipv4.<br/>
 </br>
 Currently, observers test. net is driven by only 4 observers. 
 It is fully enough for providing all necessary operations for the GEO nodes and the GEO Network Test net.
