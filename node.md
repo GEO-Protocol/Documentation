@@ -287,3 +287,18 @@ GET:contractors/trust-lines
 ```
 > echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:contractors/trust-lines\t0\t1\t1\n" > fifo/commands.fifo
 ```
+![init_trust_line.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/tl_list.png)
+
+### Response
+* The result code: 200 – completed successfully;
+* total number of TLs returned;
+* TL’s vector:
+  * Contractor’s ID
+  * Contractor’s addresses
+  * TL state
+  * Indication of the node's keys are present
+  * Indication of the contractor’s keys are rpesent
+  * Incoming Trust Amount (ITA)
+  * Outgoing Trust Amount (OTA)
+  * Current Balance (CB)
+
