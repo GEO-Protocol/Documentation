@@ -79,8 +79,10 @@ _Configuration for the BETA1 test net:_
 
 # How to read command results
 1. Move to the node directory: `cd ~/node` </br>
-1. Open `./fifo/results.fifo` for reading via, for example, `cat` </br> 
+1. Open `./fifo/results.fifo` for reading. It is a linux-pipe (fifo-file), so it would not open, untile the node is not launched as well (pipe opens in read mode only if there is another process that has opened it for the writing). <br/> 
 `cat ./fifo/results.fifo` </br>
+In this case, `cat` would hang, until node would be launched and some command-results would be written.
+
 1. Start the node: `./geo_network_client` </br>
 </br>
 </br>
