@@ -36,6 +36,9 @@ The protocol itself is expected to support dynamically formed observers list, pr
 
 Configuration file is named `conf.json`. <br/> 
 It is required to be located **on the same FS level** as `geo_network_client`. </br>
+The configuration file must contain addresses information of the node – `addresses`: 
+all the addresses that identify the node (including ports, if related) and their types, as well as the list of the [Observers](https://github.com/GEO-Protocol/Observer) – `observers`.
+
 Example configuration for the BETA1 Test net. is provided further. </br>
 </br>
 Currently, observers test. net is driven by only 4 observers. 
@@ -73,17 +76,10 @@ _Configuration for the BETA1 test net:_
     }
   ]
 }
-```
 </br>
-</br>
+The node’s addresses will be used to identify the node and they will be stored at other nodes with which the current node will communicate in either way: opening a trustline – TL, making payments, etc. Therefore, changing the address of the node after it has already opened some TLs will lead to incorrect work with the corresponding nodes.```
 
-# How to read command results
-1. Move to the node directory: `cd ~/node` </br>
-1. Open `./fifo/results.fifo` for reading. It is a linux-pipe (fifo-file), so it would not open, untile the node is not launched as well (pipe opens in read mode only if there is another process that has opened it for the writing). <br/> 
-`cat ./fifo/results.fifo` </br>
-In this case, `cat` would hang, until node would be launched and some command-results would be written.
 
-1. Start the node: `./geo_network_client` </br>
 </br>
 </br>
 
@@ -115,3 +111,19 @@ due to the limitations of concurent commands processing, and relatively high res
 This interface provides ability to communicate with node via HTTP API and to process more than one command at a time. 
 It is useful during development, and also might be considered to be used in production environments, 
 that are configured for communication with only one, or several nodes.
+
+
+# Low-level GEO Node protocol
+## Overview
+GEO node protocol
+
+# How to read command results
+1. Move to the node directory: `cd ~/node` </br>
+1. Open `./fifo/results.fifo` for reading. It is a linux-pipe (fifo-file), so it would not open, untile the node is not launched as well (pipe opens in read mode only if there is another process that has opened it for the writing). <br/> 
+`cat ./fifo/results.fifo` </br>
+In this case, `cat` would hang, until node would be launched and some command-results would be written.
+
+1. Start the node: `./geo_network_client` </br>
+</br>
+</br>
+
