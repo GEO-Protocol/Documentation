@@ -146,13 +146,6 @@ The simples way to achieve it is to configure NAT Ports Forwarding for the desti
 
 ## Network topology
 In this tutorial we would use 3 nodes: `node1`, `node2`, `node3`. <br/>
-We used WM image, and copied `node` dir 3 times:
-
-1. `cd ~`
-1. `cp ./node ./node1 -r`
-1. `cp ./node ./node2 -r`
-1. `cp ./node ./node3 -r`
-
 We would use one WM to run all three nodes. You can follow this tutorial in the same way, or you can launch 3 different WMs and configure appropriate network layer so all the WMs would be able to communicate to each other WM.
 
 Each one node needs one SSH session to be launched in, and one more SSH session for the commands transferring and results fetching. So in total, we are opening 6 SSH sessions to the WM.
@@ -168,6 +161,28 @@ Each one node needs one SSH session to be launched in, and one more SSH session 
 User: geo
 Pass: geo
 ```
+
+We should copy original `node` dir 3 times:
+
+1. `cd ~`
+1. `cp ./node ./node1 -r`
+1. `cp ./node ./node2 -r`
+1. `cp ./node ./node3 -r`
+
+And make corresponding changes to the configuration files:
+
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/node1_config.png">
+</p>
+
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/node2_config.png">
+</p>
+
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/node3_config.png">
+</p>
+
 
 Then, we need to launch the nodes. <br/>
 For it to be done, follow the next steps:
@@ -235,8 +250,10 @@ This approach might be combined with commands transferring in common shell in th
 </br>
 </br>
 
-# Opening a Trust Line
-`INIT:contractors/trust-line`
+## Opening a Trust Line
+```
+INIT:contractors/trust-line
+```
 
 |Argument|Description
 |---|---|
@@ -244,11 +261,29 @@ This approach might be combined with commands transferring in common shell in th
 |Vector of addresses of the contractor| Vector of pairs `(address type; address)`. As was mentioned above, the node currently supports only one type of address: `IPv4`, and its type code is `12`|
 | Equivalent ID | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
 
-
-
-### Example
+#### Example
 ```
 > echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tINIT:contractors/trust-line\t1\t12\t127.0.0.1:2002\t1\n" > fifo/commands.fifo
 ```
 
 ![init_trust_line.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/init_trust_line.png)
+
+### Response
+Code 200: OK, operation was performed well. No additional data is provided.
+
+
+## Trust Lines List
+```
+GET:contractors/trust-lines
+```
+
+|Argument|Description
+|---|---|
+| Offset | Number of the trust line from which the scan should be started. |
+| Count | How many TLs should be returned. |
+| Equivalent ID | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+### Example
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:contractors/trust-lines\t0\t1\t1\n" > fifo/commands.fifo
+```
