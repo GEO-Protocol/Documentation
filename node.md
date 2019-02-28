@@ -21,6 +21,8 @@ In case of successfull fly node should report
 * core and required subsystems initialisation messages;
 * current observers chain height.
 
+![node_run.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/node_run.png)
+
 ### Configuration
 Configuration contains network interfaces that should be used by the node and reported to the rest of the network, 
 as well as addresses of the observers, that are expected to be present in the network.
