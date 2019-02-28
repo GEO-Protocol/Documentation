@@ -250,7 +250,7 @@ This approach might be combined with commands transferring in common shell in th
 </br>
 </br>
 
-## Opening a Trust Line
+## Transaction: Initialise a Trust Line
 ```
 INIT:contractors/trust-line
 ```
@@ -261,6 +261,9 @@ INIT:contractors/trust-line
 |Vector of addresses of the contractor| Vector of pairs `(address type; address)`. As was mentioned above, the node currently supports only one type of address: `IPv4`, and its type code is `12`|
 | Equivalent ID | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
 
+This command initialises a Trust Line with contractor. 
+The transaction involves both current node and contractor's node. Ensures cryptographic keys exchange.
+
 #### Example
 ```
 > echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tINIT:contractors/trust-line\t1\t12\t127.0.0.1:2002\t1\n" > fifo/commands.fifo
@@ -270,9 +273,11 @@ INIT:contractors/trust-line
 
 ### Response
 Code 200: OK, operation was performed well. No additional data is provided.
+<br/>
+<br/>
+<br/>
 
-
-## Trust Lines List
+## Transaction: Trust Lines List
 ```
 GET:contractors/trust-lines
 ```
@@ -282,6 +287,9 @@ GET:contractors/trust-lines
 | Offset | Number of the trust line from which the scan should be started. |
 | Count | How many TLs should be returned. |
 | Equivalent ID | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+Returns no more than `Count` of Trust Lines that are present on the node and corresponds to the received `offset` and `equivalent`.
+`todo:` add link to te transaction in source code.
 
 ### Example
 ```
@@ -303,6 +311,9 @@ GET:contractors/trust-lines
   * Current Balance (CB)
 
 Contractor’s ID is a positive integer number (4B) that is used by the node for the simplified identification of other nodes, as well as for a number of subsequent commands.
+<br/>
+<br/>
+<br/>
 
 
 ## Changing a TL’s Outgoing Trust Amount (OTA)
@@ -317,16 +328,59 @@ SET:contractors/trust-lines
 | Amount |Pos. BinInt, <br/> up to 2^256| New value of the Outgoing Trust Amount (OTA). |
 | Equivalent ID | `uint32` | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
 
+This command sets/updates amount of outgoing Trust Line. <br/>
+It is expected that trust line to the contractor with corresponding ID is already present (initialised).
+Transaction involves both current node and contractor's node.
+`todo:` add link to te transaction in source code.
+
 **Note:** If you set a new OTA  value to 0, then the Outgoing Trust Line will be closed.
 
 ### Example
 Change the OTA to the value of 5000 to the contractor with the ID 1 in the equivalent 1:
 
 ```
-> 13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tSET:contractors/trust-lines\t1\t5000\t1\n
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tSET:contractors/trust-lines\t1\t5000\t1\n" > fifo/commands.fifo
 ```
 
 ![init_trust_line.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/tl_set.png)
 
 ### Response
-Code 200: OK, operation was performed well. No additional data is provided.
+Code 200: OK, operation was performed well. No additional data is provided. <br/>
+Code different than 200 indicates an error. Please, refer to the node's codes list for the details.
+<br/>
+<br/>
+<br/>
+
+
+## Transaction: Closing Incoming Trust Line
+
+```
+DELETE:contractors/incoming-trust-line
+```
+
+|Argument|Type|Description
+|---|---|---|
+| Contractor ID | `uint32` | Internal ID of the neighbor node, obtained from the TL List. |
+| Equivalent ID | `uint32` | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+This command is used to reject incoming Trust Line from the neigbor node.
+Transaction involves both current node and contractor's node.
+In case if contractor's node does not responds - operation is forced to be done on the current node.
+`todo:` add link to te transaction in source code.
+
+### Example
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tDELETE:contractors/incoming-trust-line\t0\t1\n" > fifo/commands.fifo
+```
+
+![tl_cose_incoming.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/tl_cose_incoming.png)
+
+### Response
+Code 200: OK, operation was performed well. No additional data is provided. <br/>
+Code different than 200 indicates an error. Please, refer to the node's codes list for the details.
+<br/>
+<br/>
+<br/>
+
+
+## Transaction: Calculate Max Flow
