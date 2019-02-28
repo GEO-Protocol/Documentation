@@ -76,6 +76,7 @@ _Configuration for the BETA1 test net:_
     }
   ]
 }
+```
 </br>
 The node’s addresses will be used to identify the node and they will be stored at other nodes with which the current node will communicate in either way: opening a trustline – TL, making payments, etc. Therefore, changing the address of the node after it has already opened some TLs will lead to incorrect work with the corresponding nodes.```
 
