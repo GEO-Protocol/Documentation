@@ -198,10 +198,10 @@ that are configured for communication with only one, or several nodes.
 
 
 # Low-level GEO Node protocol
-## Overview
+## How to send command to the node
 All commands have to be transferred to the `commands.fifo` pipe. 
-The node at the start opens this file for reading immediately, so once a command gets there, it will be processed at once.
-<br/>
+The node at the start opens this file for reading immediately, so once a command gets there, it will be processed at once.<br/>
+
 The results of the command execution will be written by the node into the `results.fifo` pipe. This file must be opened for reading **before the start of the node**, otherwise the node will freeze at the first attempt to write a result. Since we do not have the `results.fifo` pipe (as well as other files) initially, we have to run the node first to form all these files. Then we have to stop it, and all the next times we will have to open the `results.fifo` file for reading before the node start.<br/>
 <br/>
 The `events.fifo` file is planned for recording the node’s internal events (incoming payments, opening an outgoing TL, etc.). But this functionality is not implemented yet, so this file can be ignored so far.
@@ -210,13 +210,28 @@ All commands and results consist of plain text data separated by the tab symbol 
 
 Each command consist of `command UUID`, command name, and comamnd arguments.
 
-# How to read command results
+You can use standard linux command `echo` to send command to the node directly from the shell: <br/>
+`echo -e "<command>" > fifo/commands.fifo` <br/>
+Argument `-e` forces `echo` to interpet `\t` as tab character and `\n` as line end character.
+<br/>
+<br/>
+
+## How to read command result
 1. Move to the node directory: `cd ~/node` </br>
-1. Open `./fifo/results.fifo` for reading. It is a linux-pipe (fifo-file), so it would not open, untile the node is not launched as well (pipe opens in read mode only if there is another process that has opened it for the writing). <br/> 
+1. Open `./fifo/results.fifo` for reading. It is a linux-pipe (fifo-file), so it would not open, until the node is not launched as well (pipe opens in read mode only if there is another process that has opened it for the writing). <br/> 
 `cat ./fifo/results.fifo` </br>
 In this case, `cat` would hang, until node would be launched and some command-results would be written.
 
-1. Start the node: `./geo_network_client` </br>
+This approach might be combined with commands transferring in common shell in the next way:
+```
+> cat fifo/results.fifo & # read results in background
+
+> echo -e "<command 1>" > fifo/commands.fifo
+> echo -e "<command 2>" > fifo/commands.fifo
+> ...
+> echo -e "<command n>" > fifo/commands.fifo
+```
+
 </br>
 </br>
 
@@ -229,5 +244,11 @@ In this case, `cat` would hang, until node would be launched and some command-re
 |Vector of addresses of the contractor| Vector of pairs `(address type; address)`. As was mentioned above, the node currently supports only one type of address: `IPv4`, and its type code is `12`|
 | Equivalent ID | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
 
+
+
 ### Example
-`13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tINIT:contractors/trust-line\t1\t12\t127.0.0.1:2002\t1\n`
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tINIT:contractors/trust-line\t1\t12\t127.0.0.1:2002\t1\n" > fifo/commands.fifo
+```
+
+![init_trust_line.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/init_trust_line.png)
