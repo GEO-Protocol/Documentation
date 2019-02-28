@@ -99,7 +99,10 @@ The node’s addresses will be used to identify the node and they will be stored
 </br>
 
 # How to use the node
-## Network topology
+Here we will describe several ways possible how to communicate with the node. <br/>
+For the simplicity reasons, the documentation is provided in format of tutorial.
+
+## Basic overview
 Node represents _an account_ in GEO Network. <br/>
 _It is assumed, each one participant of the GEO Network would access the network via it's own node_. <br/>
 In contrast to some other decentralized networks, GEO Network does not delegate calculations to the miners, 
@@ -109,6 +112,31 @@ GEO Network Client implements such a node and provides low-level API
 for operations processing: assets transfers, trust-lines/channels accounting, etc.
 </br>
 </br>
+For the simplicity reasons, in this tutorial we would use provided WM image. 
+You can find the latest images with latest node build in [GEO Network Client repo](https://github.com/GEO-Protocol/GEO-network-client) ("Releases" section of the description).
+<br/>
+
+## VirtualBox configuration
+We would need SSH session to manipulate the nodes, so the WM should accept incoming TCP connections. <br/>
+The simples way to achieve it is to configure NAT Ports Forwarding for the destination WM.
+
+![wm_network_settings_1.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_1.png)
+
+![wm_network_settings_2.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_2.png)
+
+## Network topology
+In this tutorial we would use 3 nodes: `node1`, `node2`, `node3`. <br/>
+We used WM image, an copied `node` dir 3 times:
+
+1. `cd ~/node`
+1. `cp ./node ./node1 -r`
+1. `cp ./node ./node2 -r`
+1. `cp ./node ./node3 -r`
+
+We would use one WM to run all three nodes. You can follow this tutorial in the same way, or you can launch 3 different WMs and configure appropriate network layer so all the WMs would be able to communicate to each other WM.
+
+Each one node needs one SSH session to be launched in, and one more SSH session for the commands transferring and results fetching. So in total, we are opening 6 SSH sessions.
+
 
 ## Node communication
 There are 3 possible ways to communicate to the GEO node:
