@@ -23,6 +23,15 @@ In case of successfull fly node should report
 
 ![node_run.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/node_run.png)
 
+
+After the first launch of the node, the following objects appear in the node’s directory:
+* The `io` directory, that contains two files: `storageDB` and `communicatorStorageDB`. 
+This two files stores all the node’s data: trustlines, keys, history, payments, routing tables, etc.
+* The `fifo` directory, that contains three files: `commands.fifo`, `results.fifo` and `events.fifo`. The node’s communication will happen through these files. 
+* The `operations.log` file containing detailed log of network actions (still needs some polishing).
+* The `process.pid` file containing the `PID` of the runnig node.
+
+
 ### Configuration
 Configuration contains network interfaces that should be used by the node and reported to the rest of the network, 
 as well as addresses of the observers, that are expected to be present in the network.
