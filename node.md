@@ -23,6 +23,8 @@ In case of successfull fly node should report
 
 ![node_run.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/node_run.png)
 
+In case if node was not started as expected - please, refer to the `operations.log`. 
+Usually it contains some details abot the error occured. 
 
 After the first launch of the node, the following objects appear in the node’s directory:
 * The `io` directory, that contains two files: `storageDB` and `communicatorStorageDB`. 
@@ -30,7 +32,14 @@ This two files stores all the node’s data: trustlines, keys, history, payments
 * The `fifo` directory, that contains three files: `commands.fifo`, `results.fifo` and `events.fifo`. The node’s communication will happen through these files. 
 * The `operations.log` file containing detailed log of network actions (still needs some polishing).
 * The `process.pid` file containing the `PID` of the runnig node.
+<br/>
+<br/>
 
+### Libraries required
+GEO Network Client uses `boost` libraries and `libsodium` for the cryptography. </br> 
+Please, enshure presense of this libraries in you env. before starting the node.
+<br/>
+<br/>
 
 ### Configuration
 Configuration contains network interfaces that should be used by the node and reported to the rest of the network, 
@@ -120,22 +129,54 @@ You can find the latest images with latest node build in [GEO Network Client rep
 We would need SSH session to manipulate the nodes, so the WM should accept incoming TCP connections. <br/>
 The simples way to achieve it is to configure NAT Ports Forwarding for the destination WM.
 
-![wm_network_settings_1.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_1.png)
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_1.png">
+	VirtualBox Network Adapter Settings
+</p>
+<br/>
+<br/>
 
-![wm_network_settings_2.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_2.png)
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/wm_network_settings_2.png">
+	Pord Forwarding Settings
+</p>
+<br/>
+<br/>
+
 
 ## Network topology
 In this tutorial we would use 3 nodes: `node1`, `node2`, `node3`. <br/>
-We used WM image, an copied `node` dir 3 times:
+We used WM image, and copied `node` dir 3 times:
 
-1. `cd ~/node`
+1. `cd ~`
 1. `cp ./node ./node1 -r`
 1. `cp ./node ./node2 -r`
 1. `cp ./node ./node3 -r`
 
 We would use one WM to run all three nodes. You can follow this tutorial in the same way, or you can launch 3 different WMs and configure appropriate network layer so all the WMs would be able to communicate to each other WM.
 
-Each one node needs one SSH session to be launched in, and one more SSH session for the commands transferring and results fetching. So in total, we are opening 6 SSH sessions.
+Each one node needs one SSH session to be launched in, and one more SSH session for the commands transferring and results fetching. So in total, we are opening 6 SSH sessions to the WM.
+
+<p align="center">
+<img src="https://github.com/GEO-Protocol/Documentation/blob/master/resources/ssh_1.png">
+	SSH into the WM
+</p>
+<br/>
+<br/>
+
+```
+User: geo
+Pass: geo
+```
+
+Then, we need to launch the nodes. <br/>
+For it to be done, follow the next steps:
+
+1. Sitch to `node1` SSH sesssion and do: `cd ~/node1/ && ./geo_network_client`
+1. Sitch to `node2` SSH sesssion and do: `cd ~/node2/ && ./geo_network_client`
+1. Sitch to `node3` SSH sesssion and do: `cd ~/node3/ && ./geo_network_client`
+
+Please, refer to the "How to run" section of this doc for the details about how node could be started and what behaviour of it to expect in various cases.
 
 
 ## Node communication
@@ -179,3 +220,14 @@ In this case, `cat` would hang, until node would be launched and some command-re
 </br>
 </br>
 
+# Opening a Trust Line
+`INIT:contractors/trust-line`
+
+|Argument|Description
+|---|---|
+|Number of contractor’s addresses| How many addresses of the contractor would be included into the cpmmand|
+|Vector of addresses of the contractor| Vector of pairs `(address type; address)`. As was mentioned above, the node currently supports only one type of address: `IPv4`, and its type code is `12`|
+| Equivalent ID | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+### Example
+`13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tINIT:contractors/trust-line\t1\t12\t127.0.0.1:2002\t1\n`
