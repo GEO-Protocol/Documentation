@@ -302,3 +302,31 @@ GET:contractors/trust-lines
   * Outgoing Trust Amount (OTA)
   * Current Balance (CB)
 
+Contractor’s ID is a positive integer number (4B) that is used by the node for the simplified identification of other nodes, as well as for a number of subsequent commands.
+
+
+## Changing a TL’s Outgoing Trust Amount (OTA)
+
+```
+SET:contractors/trust-lines
+```
+
+|Argument|Type|Description
+|---|---|---|
+| Contractor ID | `uint32` | Internal ID of the neighbor node, obtained from the TL List. |
+| Amount |Pos. BinInt, <br/> up to 2^256| New value of the Outgoing Trust Amount (OTA). |
+| Equivalent ID | `uint32` | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+**Note:** If you set a new OTA  value to 0, then the Outgoing Trust Line will be closed.
+
+### Example
+Change the OTA to the value of 5000 to the contractor with the ID 1 in the equivalent 1:
+
+```
+> 13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tSET:contractors/trust-lines\t1\t5000\t1\n
+```
+
+![init_trust_line.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/tl_set.png)
+
+### Response
+Code 200: OK, operation was performed well. No additional data is provided.
