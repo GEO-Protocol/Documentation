@@ -770,9 +770,11 @@ Depending on the type of operation, there are further fields that describe this 
   * The node balance after the operation;
 <br/>  
 An example of a history of operations with the contractor command (4 operations):
+
 ```
 13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t4\ttrustline\t1594425c-98d2-48a0-8802-460f94c73100\t1536759923\topen\t0\ttrustline\t355875db-8c2a-4fc2-8186-ba57a5313fd7\t1536458923\tset\t1000\tpayment\t564afd89-e156-44ac-a322-c23501849ff6\t1536759825\tincoming\t600\t600\tpayment\t355875db-8c2a-4fc2-8186-ba57a5313fd7\t1536734825\toutgoing\t400\t200\n
 ```
+
 <br/>
 <br/>
 <br/>
