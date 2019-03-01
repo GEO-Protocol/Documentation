@@ -373,7 +373,7 @@ In case if contractor's node does not responds - operation is forced to be done 
 > echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tDELETE:contractors/incoming-trust-line\t0\t1\n" > fifo/commands.fifo
 ```
 
-![tl_cose_incoming.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/tl_cose_incoming.png)
+![tl_close_incoming.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/tl_close_incoming.png)
 
 ### Response
 Code 200: OK, operation was performed well. No additional data is provided. <br/>
@@ -384,3 +384,38 @@ Code different than 200 indicates an error. Please, refer to the node's codes li
 
 
 ## Transaction: Calculate Max Flow
+```
+GET:contractors/transactions/max/fully
+```
+
+|Argument|Type|Description|
+|---|---|---|
+| Number of contractors | `uint32` | How many contractors would be list into the command |
+| Contractors list |`list` | List of contractors to which max payment flow should be calculated |
+
+### Contractors fields
+|Field|Type|Description|
+|---|---|---|
+| Address type | `enum` | Only IPv4 Addresses are supported at the moment, code 12. |
+| Address | `string` | Corresponding address representation. |
+| Equivalent ID | `uint32` |  ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+This transaction combines routing algorithm and flow prediciton algorithm and tries to efficiently scan the network topology and to  calculate max. payment flow from the issuer node to each one node, that is listed in arguments. There is no need for direct TLs presence between issuer node and listed nodes: it would be enough if there would exist some paths that are connecting this nodes via some internal nodes. GEO Protocol supports paths that are up to nodes 7 long (icluding command issuer node and the destination node).
+
+### Example
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:contractors/transactions/max/fully\t3\t12\t127.0.0.1:2001\t12\t127.0.0.1:2003\t12\t127.0.0.1:2000\t1\n" > fifo/commands.fifo
+```
+![max_flow_prediction.png](https://github.com/GEO-Protocol/Documentation/blob/master/resources/max_flow_prediction.png)
+
+### Response
+Code 200: OK, operation was performed well.<br/>
+Code different than 200 indicates an error. Please, refer to the node's codes list for the details.
+
+* Number of contractors
+* Vector of payment possibilities
+  * address type
+  * address
+  * payment possibility
+
+
