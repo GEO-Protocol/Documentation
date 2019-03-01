@@ -715,5 +715,64 @@ Example of the history of payments command result (3 operations):
 ```
 13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t3\t1594425c-98d2-48a0-8802-460f94c73100\t1536759923\t1 127.0.0.1:2005\tincoming\t500\t500\t355875db-8c2a-4fc2-8186-ba57a5313fd7\t1536458923\t1 127.0.0.1:2004\outgoing\t300\t200\t564afd89-e156-44ac-a322-c23501849ff6\t1536759825\t1 127.0.0.1:2007\toutgoing\t600\t-400\n
 ```
+<br/>
+<br/>
+<br/>
 
+## Transasction: Get History With Contractor
+```
+GET:history/contractor
+```
 
+Returns a history of TL operations and payments with a contractor that uses ALL the addresses stated in the command parameters.
+
+|Argument|Type|Description
+|---|---|---|
+| Offset | `uint64` | Number of the record from which the scan should be started. |
+| Count | `uint64` | Amount of records that should be returned. |
+| Number of cont. addresses | `UNIX timestamp` | Filter by the date/time (from). If not present - must be set to "null". 
+| List of ocnt. addresses | `UNIX timestamp` | Filter by the date/time (up to). If not present - must be set to "null".
+| Equivalent ID | `uint32` |  ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+### Addresses fields
+|Field|Type|Description|
+|---|---|---|
+| Address type | `enum` | Only IPv4 Addresses are supported at the moment, code 12. |
+| Address | `string` | Corresponding address representation. |
+
+### Example
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:history/contractor\t0\t100\1\12\127.0.0.1:2005\t1\n" > fifo/commands.fifo
+```
+
+### Result
+The result codes: 200 – completed successfully
+<br/>
+* Number of operations;
+* List of operations:
+  * Operation type (enum);
+  * <Operation data>;
+
+The operation type can be `Trustline` and `Payment`. <br> 
+Depending on the type of operation, there are further fields that describe this operation:
+
+* Trustline:
+  * transactionUUID
+  * Time: UNIX timestamp
+  * Type of operation with the TL
+  * Amount
+
+* Payment:
+  * transactionUUID;
+  * Time: UNIX timestamp;
+  * Type of payment;
+  * Amount;
+  * The node balance after the operation;
+<br/>  
+An example of a history of operations with the contractor command (4 operations):
+```
+13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t4\ttrustline\t1594425c-98d2-48a0-8802-460f94c73100\t1536759923\topen\t0\ttrustline\t355875db-8c2a-4fc2-8186-ba57a5313fd7\t1536458923\tset\t1000\tpayment\t564afd89-e156-44ac-a322-c23501849ff6\t1536759825\tincoming\t600\t600\tpayment\t355875db-8c2a-4fc2-8186-ba57a5313fd7\t1536734825\toutgoing\t400\t200\n
+```
+<br/>
+<br/>
+<br/>
