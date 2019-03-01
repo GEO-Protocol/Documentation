@@ -316,7 +316,7 @@ Contractor’s ID is a positive integer number (4B) that is used by the node for
 <br/>
 
 
-## Changing a TL’s Outgoing Trust Amount (OTA)
+## Transaction Set Outgoing Trust Amount (OTA)
 
 ```
 SET:contractors/trust-lines
@@ -383,6 +383,162 @@ Code different than 200 indicates an error. Please, refer to the node's codes li
 <br/>
 
 
+## Transaction: Trust Line by Contractor’s ID
+```
+GET:contractors/trust-lines/one/id
+```
+
+|Argument|Type|Description
+|---|---|---|
+| Contractor ID | `uint32` | Internal ID of the neighbor node, obtained from the TL List. |
+| Equivalent ID | `uint32` | ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+Returns Trust Line with contractor, that has internal id `Contractor ID`
+
+### Example
+Obtaining TL with a contractor with ID 2 in the equivalent 1:
+
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:contractors/trust-lines/one/id\t2\t1\n" > fifo/commands.fifo
+```
+
+### Response:
+Result codes:
+`200` – completed successfully. <br/>
+`405` – TL is absent. <br/>
+<br/>
+In case of code `200`: <br/>
+* Contractor’s ID
+* State of the TL
+* Indication of your own keys presence
+* Indication of the contractor’s keys presence
+* Incoming Trust Amount (ITA)
+* Outgoing Trust Amount (OTA)
+* Current Balance (CB)
+
+When receiving the code 405, no more data is returned. <br/>
+An example of the command’s result:
+
+```
+13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t2\t2\t1\t1\t200\t5000\t300\n
+```
+<br/>
+<br/>
+<br/>
+
+## Transaction: Trust Line by Contractor Address
+```
+GET: contractors/trust-lines/one/address
+```
+
+|Argument|Type|Description|
+|---|---|---|
+| Number of addresses | `uint32` | How many contractors would be list into the command. |
+| List of addresses |`list` | List of addresses that are related to the contractor. |
+| Equivalent ID | `uint32` |  ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+
+### Addresses fields
+|Field|Type|Description|
+|---|---|---|
+| Address type | `enum` | Only IPv4 Addresses are supported at the moment, code 12. |
+| Address | `string` | Corresponding address representation. |
+
+### Example
+Obtaining TL with the contractor with the address 127.0.0.1:2000 in the equivalent of 1:
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:contractors/trust-lines/one/address\t1\t12\t127.0.0.1:2000\t1\n" > fifo/commands.fifo
+```
+
+### Response:
+Result code:
+`200` - successfully completed. <br/>
+`405` - TL is absent. <br/>
+<br/>
+In case of code `200`: <br/>
+* Contractor’s ID
+* State of the TL
+* State of the TL
+* Indication of your own keys presence
+* Indication of the contractor’s keys presence
+* Incoming Trust Amount (ITA)
+* Outgoing Trust Amount (OTA)
+* Current Balance (CB)
+</br>
+* When receiving the code `405`, no more data is returned.</br>
+</br>
+An example of the command’s result:
+```
+13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t2\t2\t1\t1\t200\t5000\t300\n
+```
+<br/>
+<br/>
+<br/>
+
+
+## Transaction: List Level 1 Neighbors (Contractors)
+```
+GET:contractors
+```
+
+|Argument|Type|Description|
+|---|---|---|
+| Equivalent ID | `uint32` |  ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+An example of getting the list of contractors command:
+
+Returns information about all nodes, to/from which Trust Lines are present on the current node.
+
+### Example
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:contractors\t1\n" > fifo/commands.fifo
+```
+
+### Response
+Result codes: 
+
+`200` – completed successfully. <br/>
+<br/>
+* Number of contractors; <br/>
+* List of contractors; <br/>
+* Contractor’s ID; <br/>
+* Contractor’s address; <br/>
+<br/>
+An example of the command result with 3 contractors:
+```
+13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t3\t0\t1 127:0.0.1:2000\t2\t2 127.0.0.1:2001 127.0.0.1:2002\t5\t1 127.0.0.1:2005\n
+```
+If the equivalent is 0, then the list of all contractors in all the equivalents will be returned. If not 0, then only those contractors with which there are TLs in this equivalents will be shown. The 0 value is reserved, so it can not be used to denote any particular equivalent.
+<br/>
+<br/>
+<br/>
+
+## Transaction: List Equivalents
+```
+GET:equivalents
+```
+
+There are no parameters in this transaction. <br/>
+<br/>
+Returns the list of equivalents in which the node has TLs.
+
+### Example
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:equivalents\n" > fifo/commands.fifo
+```
+### Response
+* `200` – completed successfully; <br/>
+* Number of equivalents;
+* List of equivalents;
+
+An example of a command result with 5 equivalents:
+```
+13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t5\t1\t6\t8\t2002\t5\n
+```
+<br/>
+<br/>
+<br/>
+
+
 ## Transaction: Calculate Max Flow
 ```
 GET:contractors/transactions/max/fully
@@ -417,5 +573,147 @@ Code different than 200 indicates an error. Please, refer to the node's codes li
   * address type
   * address
   * payment possibility
+<br/>
+<br/>
+<br/>
+
+
+## Transaction: Payment
+```
+CREATE:contractors/transactions
+```
+
+|Argument|Type|Description|
+|---|---|---|
+| Number of contractors | `uint32` | How many contractors would be list into the command. |
+| List of contractor addresses |`list` | List of addresses that are related to the contractor (node, that should receive the payment). |
+| Amount | Pos. BigInt | Amount that should be sent to the contractor node. |
+| Equivalent ID | `uint32` |  ID if the [equivalent](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md#trust-lines-equivalents) in which TL (Trust Line) should be opened: an integer greater than 0. |
+
+
+### Addresses fields
+|Field|Type|Description|
+|---|---|---|
+| Address type | `enum` | Only IPv4 Addresses are supported at the moment, code 12. |
+| Address | `string` | Corresponding address representation. |
+
+This command initilises payment operation from current node to the contractor. Addresses received in arguments are used for the communication with remote node. Only one address is used at a time. 
+
+### Example
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tCREATE:contractors/transactions\t1\t12\t127.0.0.1:2003\t2000\t1\n" > fifo/commands.fifo
+```
+
+### Response
+Result codes:
+
+`201` – completed successfully. </br>
+`401` – protocol error (some conditions are not met).</br>
+`409` – consensus has not been reached (some nodes doesn't approved the operation).</br>
+`412` – insufficient payment possibilities (isufficient funds).</br>
+`444` – the contractor is not reachable (remote node seems to be down).</br>
+`462` – no payment paths (no connection is possible between sender and receiver node).</br>
+</br>
+When receiving the code `201`, the result will also contains `transaction UUID` – UUID4 id of the transaction that was performed.
+</br>
+</br>
+</br>
+
+## Transaction: Get History of Operations With a TL
+```
+GET:history/trust-lines
+```
+Returns list of records, that represents operations that was done with a Trust Line (except payments), for example: amount changes, opening datetime, closing datetime, etc. 
+
+|Argument|Type|Description
+|---|---|---|
+| Offset | `uint64` | Number of the record from which the scan should be started. |
+| Count | `uint64` | Amount of records that should be returned. |
+| Lower Datime/Time Bound| `UNIX timestamp` | Filter by the date/time (from). If not present - must be set to "null". 
+| Upper Datime/Time Bound| `UNIX timestamp` | Filter by the date/time (up to). If not present - must be set to "null". 
+
+The Shift and the Number of operations parameters are used to get history in portions. The numbering of records starts with 0. Filters are UNIX timestamps. If no filtration is required, then these parameters must be set to null. It is possible to filter with both filters at the same time or with only one of them.
+
+### Example
+An example of the getting history of operations with a TL command:
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:history/trust-lines\t0\t100\tnull\t1536759923\t1\n" > fifo/commands.fifo
+```
+
+## Response
+* `200` – completed successfully; <br/>
+* Number of operations returend; <br/>
+* List of operations:
+  * `transaction UUID`;
+  * Date/Time (UNIX timestamp);
+  * Address of the contractor;
+  * Type of operation with the TL;
+  * Amount;
+<br/>
+The type of operation with TL can be as follows: (`todo` specify ENUM of types)
+* Opening
+* Accepting
+* Setting
+* Updating
+* Closing
+* Rejecting
+* Closing Incoming
+* Rejecting Outgoing
+
+The sum is different from zero only in Setting and Updating operations (change of trust), 
+in the rest of the cases it equals 0.
+
+If the `offset` and the `cuont` parameters will set more operations than the actual number of operations, then the result will only return the existing operations, that meet the command’s criteria.
+
+Example of a history of operations with TLs result (3 operations):
+```
+13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t3\t1594425c-98d2-48a0-8802-460f94c73100\t1536759923\t1 127.0.0.1:2005\topening\t0\t355875db-8c2a-4fc2-8186-ba57a5313fd7\t1536458923\t1 127.0.0.1:2005\tsetting\t500\t564afd89-e156-44ac-a322-c23501849ff6\t1536759825\t1 127.0.0.1:2007\taccepting\t0\n
+```
+<br/>
+<br/>
+<br/>
+
+## Transaction: Get Payment History
+```
+GET:history/payments
+```
+
+|Argument|Type|Description
+|---|---|---|
+| Offset | `uint64` | Number of the record from which the scan should be started. |
+| Count | `uint64` | Amount of records that should be returned. |
+| Lower Datime/Time Bound| `UNIX timestamp` | Filter by the date/time (from). If not present - must be set to "null". 
+| Upper Datime/Time Bound| `UNIX timestamp` | Filter by the date/time (up to). If not present - must be set to "null".
+| Lower Amount Bound| `+BigInt` </br> Up to `2^256` | Filter by the amount (from). If not present - must be set to "null". 
+| Upper Amount Bound| `+BigInt` </br> Up to `2^256` | Filter by the amount (up to). If not present - must be set to "null".
+| Command UUID | `UUID4` | Filter by command. If not present - must be set to "null". if present - the search is carried out only on it without taking into account other parameters.
+
+### Example
+An example of the receiving a history of operations with TL command:
+```
+> echo -e "13e5cf8c-5834-4e52-b65b-f9281dd1ff91\tGET:history/payments\t0\t100\tnull\t1536759923\t500\tnull\tnull\t1\n" > fifo/commands.fifo
+```
+
+### Response
+* `200` – completed successfully
+* Number of operations
+* List of operations
+* transactionUUID
+* Time: UNIX timestamp
+* Address of the contractor
+* Type of payment
+* Amount
+* The node balance after the operation
+
+The type of payment may be as follows:
+* Incoming (an incoming payment)
+* Outgoing (an outgoing payment)
+
+The resulting balance after operation is the sum of balances for all TLs after the current operation in equivalent of the transaction.
+
+Example of the history of payments command result (3 operations):
+```
+13e5cf8c-5834-4e52-b65b-f9281dd1ff91\t200\t3\t1594425c-98d2-48a0-8802-460f94c73100\t1536759923\t1 127.0.0.1:2005\tincoming\t500\t500\t355875db-8c2a-4fc2-8186-ba57a5313fd7\t1536458923\t1 127.0.0.1:2004\outgoing\t300\t200\t564afd89-e156-44ac-a322-c23501849ff6\t1536759825\t1 127.0.0.1:2007\toutgoing\t600\t-400\n
+```
 
 
