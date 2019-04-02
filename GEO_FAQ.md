@@ -19,7 +19,7 @@ GEO is an open-source, off-chain, blockchain agnostic value transfer protocol, t
 As a decentralized credit network, our protocol is the truly distributed realization of Ryan Fuger’s idea.
 
 **7. Who can use GEO?**
-Any person with any device (even a mobile device in prospect) could become part of the ecosystem. However, GEO Protocol is made mainly for developers and businesses, because they could connect different applications or ecosystems which will be the part of [GEO Network.] (http://geoexplorer.io/)
+Any person with any device (even a mobile device in prospect) could become part of the ecosystem. However, GEO Protocol is made mainly for developers and businesses, because they could connect different applications or ecosystems which will be the part of [GEO Network.](http://geoexplorer.io/)
 
 **8. How can I use GEO?**
 If you are a developer or business owner you can use the following manual will be published soon) to connect your application or device or server to the network. If you are a business owner -- you can read our docs about protocol advantages, but you still will need development skills to connect to the network. If you are not a developer or a business owner the only way for you to use GEO Protocol is to register or enter any application or ecosystem which is attached to the GEO Network.
