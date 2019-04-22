@@ -6,7 +6,7 @@
 GEO Protocol is a decentralized p2p protocol for values transfer that uses state channels and trust lines technologies and implements its own routing algorithm as well. 
 This is a protocol that is able to build a global decentralized P2P network which connects different ledgers.
 The protocol uses off-chain solutions that provide scalability of the network. 
-Our purpose is create a universal ecosystem for value transfer networks. </br>
+Our purpose is to create a universal ecosystem for value transfer networks. </br>
 For more information visit our [website](https://geoprotocol.io/).
 
 <br/>
