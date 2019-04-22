@@ -26,7 +26,7 @@ If you are a developer or business owner you can use the following manual (will 
 
 **9. What would you recommend me to read first to have a birds-eye overview?**
 We would recommend starting to explore the project from [this article.](https://medium.com/geoprotocol/what-hair-on-fire-problem-does-the-geo-protocol-solve-6b1a3d6a7378) Also, you should check this short [video](https://www.youtube.com/watch?v=mrDzMgdjTN0&t=3s), where chief architect of GEO Protocol, Dima Chizhevsky explains the basic components and technologies used in GEO Ecosystem.
-Besides video, we also wrote an [article](“https://medium.com/geoprotocol/introducing-geo-protocol-140e94ab5fba) where the concept of the Internet of Value is explained and the way GEO Protocol contribute in the development of this technology is overviewed.
+Besides video, we also wrote an [article](https://medium.com/geoprotocol/introducing-geo-protocol-140e94ab5fba) where the concept of the Internet of Value is explained and the way GEO Protocol contribute in the development of this technology is overviewed.
 
 Since the basic component in GEO Ecosystem is trustlines it might be useful to read this [article](https://medium.com/geoprotocol/trustlines-are-the-new-iou-5a10fde5881a) in order to understand what trustline is.
 
