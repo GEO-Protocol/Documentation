@@ -48,7 +48,7 @@ GEO Protocol uses 4  main algorithms:
     
 1. Topology Collection Algorithm. It creates a topology map by obtaining information about the possible connections between the sending and the receiving node as well as overall payment capacity on intermediary nodes.
 
-2.Payment Path Building (Routing) and Maximum Flow Prediction Algorithm. Considering the topology map it calculates the maximum possible flow that may be transferred from one node to another. It also seeks for the best route through which the asset could be transferred.
+2. Payment Path Building (Routing) and Maximum Flow Prediction Algorithm. Considering the topology map it calculates the maximum possible flow that may be transferred from one node to another. It also seeks for the best route through which the asset could be transferred.
 
 3. Payment Algorithm. It is responsible for the actual transfer of funds
     
