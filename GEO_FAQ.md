@@ -30,7 +30,7 @@ Besides video, we also wrote an [article](“https://medium.com/geoprotocol/intr
 
 Since the basic component in GEO Ecosystem is trustlines it might be useful to read this [article](https://medium.com/geoprotocol/trustlines-are-the-new-iou-5a10fde5881a) in order to understand what trustline is.
 
-Afterward, you might be interested in the exact problem GEO solves. This article (will be pusblished during the first two weeks of April 2019) will help you to understand that.
+Afterward, you might be interested in the exact problem GEO solves. This [article](https://medium.com/geoprotocol/what-hair-on-fire-problem-does-the-geo-protocol-solve-6b1a3d6a7378) will help you to understand that.
 
 Furthermore, there are also a few articles which describe the existing problems in crypto and fintech industry. This [article](https://hackernoon.com/how-off-chain-solutions-can-become-a-tcp-ip-for-the-internet-of-money-17a58922d93b) will show you how the existing finance industry is similar to the Internet in 1960th - 70th and in terms of interoperability and fragmentation. And [this one](https://medium.com/geoprotocol/the-need-for-layer-3-on-the-internet-of-value-2a62f8e93160) will give you an understanding of what could be called “Layer 3 solutions”
 
