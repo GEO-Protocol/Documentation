@@ -63,13 +63,17 @@ It is a type of connection between 2 nodes when both trustlines and state channe
 **3. What is a trustline?**
 Trustline is a connection between 2 nodes which allows them to account and transfer values between each other. To get more information read our [article](https://medium.com/geoprotocol/trustlines-are-the-new-iou-5a10fde5881a) written by Max Demyan, or watch a [video](https://www.youtube.com/watch?v=ieZKustA2Hk) where Dima Chizhevsky explains the mechanics of trustlines.
 
-**4. Why should I use trustlines??**
-Trustlines is used to execute transactions between two independent registries. It should be noted that operations on trustlines do not necessarily change the data in registers (for example, when the registry is outside the GEO node). It records the transfer of values between them instead
+**4. Why should I use trustlines?**
+Trustlines is used to execute transactions between two independent registries. It should be noted that operations on trustlines do not necessarily change the data in registers (for example, when the registry is outside the GEO node). It records the transfer of values between them instead.
+
 Examples:
-    1. Communication between two users (to account finance relations)
-    2. Joining the user to the hub
-    3. Interconnections between service providers (hubs, gateways, market makers, etc.)
-    4. Accounting asset equivalents (for example, in IoT)
+1. Communication between two users (to account finance relations)
+
+2. Joining the user to the hub
+
+3. Interconnections between service providers (hubs, gateways, market makers, etc.)
+
+4. Accounting asset equivalents (for example, in IoT).
 
 **5. What is a state channel?**
 State channel is a type of connection that allows making fast, safe and trustless offchain transactions between two accounts from common blockchain ecosystem. However, cryptoasset is backed on the channel by onchain transactions.
