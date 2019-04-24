@@ -1,45 +1,59 @@
+![Header](https://github.com/GEO-Protocol/Documentation/blob/master/resources/repo-header.png)
+<br/>
+<br/>
+
+
+GEO Protocol is a decentralized p2p protocol for values transfer that uses state channels and trust lines technologies and implements its own routing algorithm as well. 
+This is a protocol that is able to build a global decentralized P2P network which connects different ledgers.
+The protocol uses off-chain solutions that provide scalability of the network. 
+Our purpose is to create a universal ecosystem for value transfer networks. </br>
+For more information visit our [website](https://geoprotocol.io/).
+
+<br/>
+<br/>
+
+
+### Community:
 [![Telegram Chat](https://github.com/Patrolavia/telegram-badge/blob/master/chat.svg)](https://t.me/geocommunity)
 [![Telegram Channel](https://github.com/Patrolavia/telegram-badge/blob/master/follow.svg)](https://t.me/geoprotocol)
 [![Gitter Chatl](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/GEO_Protocol/Lobby#)
-<br/>
-<br/>
 
-
-
-# Useful links:
-
-* [Website](https://geoprotocol.io/) 
-* [FAQ](https://github.com/GEO-Protocol/Documentation/blob/master/GEO_FAQ.md)
-
-### Community:
-* [Telegram](https://t.me/geoprotocol)  
-* [Gitter](https://gitter.im/GEO_Protocol/Lobby)  
 * [Medium](https://medium.com/geoprotocol)                                                                                             
 * [Twitter](https://twitter.com/geo_protocol)                                                                                          
 * [LinkedIn](https://www.linkedin.com/company/geoprotocol/) 
 * [Facebook](https://www.facebook.com/GeoProtocol/)
 * [YouTube](https://www.youtube.com/c/GEOProtocol)
+<br/>
+<br/>
 
-### Technical Documentation:
+# Useful links:
+* [Website](https://geoprotocol.io/) 
+* [FAQ](https://github.com/GEO-Protocol/Documentation/blob/master/GEO_FAQ.md)
+<br/>
+<br/>
+
+# Documentation:
+* [GEO Network Client Docs and HowTo](https://github.com/GEO-Protocol/Documentation/blob/master/node.md)
+<br/>
+<br/>
+
+# Specs and formal description
 * [Payment algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/transactions/transactions.md)           
 * [Trust lines algorithm specification](https://github.com/GEO-Protocol/specs-protocol/blob/master/trust_lines/trust_lines.md)         
-* [C++ implementation of Lamport One Time Signature](https://github.com/GEO-Protocol/lib-crypto-lamport)
 * [GEO Service Registry (GSR)](https://github.com/GEO-Protocol/specs-gsr/blob/master/specs/gsr.md)
 * [GEO Voting Service (GVS)](https://github.com/GEO-Protocol/specs-gsr/blob/master/specs/gvs.md)
+<br/>
+<br/>
 
-# GEO Protocol
+# Repositories
+* [Network Client](https://github.com/GEO-Protocol/GEO-network-client)
+* [Observer](https://github.com/GEO-Protocol/Observer)
+* [C++ implementation of Lamport One Time Signature](https://github.com/GEO-Protocol/lib-crypto-lamport)
+<br/>
+<br/>
 
-GEO Protocol is a decentralized p2p protocol for values exchange that uses state channels and trust lines technologies and implements its own routing algorithm as well. 
-This is a protocol that is able to build a global decentralized P2P network which connects different ledgers.
-The protocol works without blockchain and uses off-chain solutions that provide scalability of the network. 
-Our purpose is to make value exchange as simple as sending email. 
-For more information visit our [Website](https://geoprotocol.io/)
 
-*There are 4  core algorithms used in GEO Protocol:*
-1. Payment algorithm
-2. Calculation of payment possibilities algorithm
-3. Routing algorithm
-4. Cyclic clearing algorithm
+# Updates
 
 **_Update 18.10.2018_** /
 We uploaded C++implementation of [Lamport Signature](https://en.wikipedia.org/wiki/Lamport_signature) on top of BLAKE2b. Now you can take a look or download it by clicking [here](https://github.com/GEO-Protocol/lib-crypto-lamport). We use such cryptographic sollution in [GEO Network client](https://github.com/GEO-Protocol/GEO-network-client) and [observers chain backend](https://github.com/GEO-Protocol/gns-observers-chain-back). 
