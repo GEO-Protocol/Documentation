@@ -85,7 +85,7 @@ Node reports sucess as well as some additional parameters that are used for chan
 
 </br>
 
-### Opening CC on node A
+### Opening CC on node B
 
 ```bash
 > curl -X POST "http://172.17.0.3:3000/api/v1/node/contractors/init-channel/?contractor_address=12-172.17.0.2:2000&contractor_id=0&crypto_key=78b2e9736fbdd7b53931b998a42c1ae9f3c4caf3e1f864c93650d2167428a553" -i
@@ -97,3 +97,26 @@ Node reports sucess as well as some additional parameters that are used for chan
 
 As well as previous node, node `B` reports OK and it's internal CC details.
 On this stage nodes has established secret channel for communication.
+
+<br/>
+
+# Step 3: Open Trust Line (A 100 -> B)
+
+```bash
+> curl -X POST "http://172.17.0.2:3000/api/v1/node/contractors/0/init-trust-line/1/" -i
+```
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/6.png">
+</p>
+
+After this command, both nodes has an empty trust line with pre-shared public keys (1024, by default). 
+Node `A` has sent it's own public keys to node `B`, and node `B` has sent it's public keys to the node `A`. You can refer to corresponding logs of the nodes for the details about how keys exchange was done and how may keys was transferred.
+
+
+On this stage, the trust lines is set to (Outgoing Trust Amount = 0, Incoming Trust Amount = 0, Balance = 0) on both nodes. For more details, please refer to this video:
+
+<p align="center">
+  <a href="http://www.youtube.com/watch?feature=player_embedded&v=ieZKustA2Hk" target="_blank"><img src="http://img.youtube.com/vi/ieZKustA2Hk/0.jpg" 
+  alt="GEO Protocol: Introduction to Trustlines by Dima Chizhevsky" width="720" height="480" border="10" /></a>
+<p/>
