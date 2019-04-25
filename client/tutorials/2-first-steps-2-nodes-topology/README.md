@@ -168,7 +168,7 @@ As we can see, both nodes are keeping valid trust line state.
 
 <br/>
 
-# Step 3: Payment B->A (10)
+# Step 4: Payments
 
 Now, when the trust line from node `A` to node `B` is open and ready to perform operations, node `B` is able to send payments to the node `A`. Let's send, for example, $50. 
 
@@ -197,7 +197,12 @@ Now, let's send $50.
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/11.png">
 </p>
 
-As we can see, node `B` reported Transaction UUID, so the operations was seccessfull.
+As we can see, node `B` reported Transaction UUID, so the operations was successfull and the current topology is now the next:
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/topology2.png">
+</p>
+
 Now, let's check max. flow from node `B` to node `A`:
 
 ```bash
@@ -235,5 +240,5 @@ As we can see, now node `A` **is able to send payments to node** `B` and clear t
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/14.png">
 </p>
 
-Node `A` reports success as well! Awesome!
+Node `A` reports success as well! Awesome! <br/>
 As we can see, the basic mechanics works well and now it is time to go more complex topologies and cases.
