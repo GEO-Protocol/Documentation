@@ -111,12 +111,45 @@ On this stage nodes has established secret channel for communication.
 </p>
 
 After this command, both nodes has an empty trust line with pre-shared public keys (1024, by default). 
-Node `A` has sent it's own public keys to node `B`, and node `B` has sent it's public keys to the node `A`. You can refer to corresponding logs of the nodes for the details about how keys exchange was done and how may keys was transferred.
+Node `A` has sent it's own public keys to node `B`, and node `B` has sent it's public keys to the node `A`. You can refer to corresponding logs of the nodes (`/node/client/operations.log`) for the details about how keys exchange was done and how keys was transferred.
 
-
-On this stage, the trust lines is set to (Outgoing Trust Amount = 0, Incoming Trust Amount = 0, Balance = 0) on both nodes. For more details, please refer to this video:
+On this stage, the trust line is set to (Outgoing Trust Amount = 0, Incoming Trust Amount = 0, Balance = 0) on both nodes in `equivalent = 1`. We assume, that current `equivalent_id` of $ == 1. For more details, please refer to this video:
 
 <p align="center">
   <a href="http://www.youtube.com/watch?feature=player_embedded&v=ieZKustA2Hk" target="_blank"><img src="http://img.youtube.com/vi/ieZKustA2Hk/0.jpg" 
   alt="GEO Protocol: Introduction to Trustlines by Dima Chizhevsky" width="720" height="480" border="10" /></a>
 <p/>
+
+Finaly, we need to set it equal to $100. <br/>
+To be able to send even cents, we now need to open Trust Line for `$100 * 100 cents == 10000 cents`.
+
+```bash
+> curl -X PUT "http://172.17.0.2:3000/api/v1/node/contractors/0/trust-lines/1/?amount=10000" -i
+```
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/7.png">
+</p>
+
+Now we can check if Trust Line has been set correctly. <br/>
+We can do the next command on node `A`:
+
+```bash
+curl -X GET "http://172.17.0.2:3000/api/v1/node/contractors/trust-lines/0/10/1/"
+```
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/8.png">
+</p>
+
+And on the node `B`:
+
+```bash
+curl -X GET "http://172.17.0.3:3000/api/v1/node/contractors/trust-lines/0/10/1/"
+```
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/9.png">
+</p>
+
+As we can see, both nodes are keeping valid trust line state.
