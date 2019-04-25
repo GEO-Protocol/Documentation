@@ -33,7 +33,7 @@ For more information visit our [website](https://geoprotocol.io/).
 <br/>
 
 # Documentation:
-* [GEO Network Client Docs and HowTo](https://github.com/GEO-Protocol/Documentation/blob/master/node.md)
+* [GEO Network Client Docs, APIs and HowTo](https://github.com/GEO-Protocol/Documentation/tree/master/client)
 <br/>
 <br/>
 
