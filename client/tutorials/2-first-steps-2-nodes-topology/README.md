@@ -74,6 +74,8 @@ Communication channels are used by nodes to perform secure packets exchange. All
 > curl -X POST "http://172.17.0.2:3000/api/v1/node/contractors/init-channel/?contractor_address=12-172.17.0.3:2000"
 ```
 
+[`Open Communication Channel API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#open-communication-channel)
+
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/4.png">
 </p>
@@ -91,6 +93,8 @@ Node reports sucess as well as some additional parameters that are used for chan
 > curl -X POST "http://172.17.0.3:3000/api/v1/node/contractors/init-channel/?contractor_address=12-172.17.0.2:2000&contractor_id=0&crypto_key=78b2e9736fbdd7b53931b998a42c1ae9f3c4caf3e1f864c93650d2167428a553" -i
 ```
 
+[`Open Communication Channel API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#open-communication-channel)
+
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/5.png">
 </p>
@@ -105,6 +109,8 @@ On this stage nodes has established secret channel for communication.
 ```bash
 > curl -X POST "http://172.17.0.2:3000/api/v1/node/contractors/0/init-trust-line/1/" -i
 ```
+
+[`Init Trust Line API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#open-trust-line-tl)
 
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/6.png">
@@ -127,6 +133,8 @@ To be able to send even cents, we now need to open Trust Line for `$100 * 100 ce
 > curl -X PUT "http://172.17.0.2:3000/api/v1/node/contractors/0/trust-lines/1/?amount=10000" -i
 ```
 
+[`Set Outgoing Trust Line API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#set-outgoing-trust-line)
+
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/7.png">
 </p>
@@ -138,6 +146,8 @@ We can do the next command on node `A`:
 curl -X GET "http://172.17.0.2:3000/api/v1/node/contractors/trust-lines/0/10/1/"
 ```
 
+[`List Trust Lines API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#list-trust-lines)
+
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/8.png">
 </p>
@@ -148,8 +158,42 @@ And on the node `B`:
 curl -X GET "http://172.17.0.3:3000/api/v1/node/contractors/trust-lines/0/10/1/"
 ```
 
+[`List Trust Lines API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#list-trust-lines)
+
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/9.png">
 </p>
 
 As we can see, both nodes are keeping valid trust line state.
+
+<br/>
+
+# Step 3: Payment B->A (10)
+
+Now, when the trust line from node `A` to node `B` is open and ready to perform operations, node `B` is able to send payments to the node `A`. Let's send, for example, $50. 
+
+First of all, let's be sure, how many assets we can transfer:
+
+```bash
+> curl -X GET "http://172.17.0.3:3000/api/v1/node/contractors/transactions/max/1/?contractor_address=12-172.17.0.2:2000"
+```
+
+[`Max Flows API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#max-flow-predicition)
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/10.png">
+</p>
+
+As expected, max flow from node `B` to node `A` equals `10000`. <br/>
+Now, let's send $50.
+
+```bash
+> curl -X POST "http://172.17.0.3:3000/api/v1/node/contractors/transactions/1/?contractor_address=12-172.17.0.2:2000&amount=5000"
+```
+
+[`Payment API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#payment)
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/11.png">
+</p>
+
