@@ -3,26 +3,6 @@
 * [Repository](https://github.com/GEO-Protocol/GEO-node-CLI)
 * [Postman Collection](https://github.com/GEO-Protocol/Documentation/blob/master/client/http-api/GEO%20node%20HTTP%20interface.postman_collection.json)
 
-## Node communication
-There are 3 possible ways to communicate to the GEO node:
-1. **Via low-level GEO Node protocol** <br/>
-This is the most performant and the most flexible way of communication, but in the same time, the most complex one.
-This communication channel should be used in production environments or embedded systems 
-with maximum performance in mind, and to avoid addtional resource consupting layers of communication (for example, HTTP API).
-
-1. **Via command-line interface** [comming soon] <br/> 
-This interface provides ability to communicate with node from the console in mode "one command at a time". </br>
-It is useful during development, but it should not be considered to be used in production environments, 
-due to the limitations of concurent commands processing, and relatively high resouce usage per command execution.
-
-1. **Via JSON API** [comming soon] <br/>
-This interface provides ability to communicate with node via HTTP API and to process more than one command at a time. 
-It is useful during development, and also might be considered to be used in production environments, 
-that are configured for communication with only one, or several nodes.
-
-GEO Node provides low-level text interface for commands and results processing.<br/>
-This is done so to keep the node as tiny as possible with the embedded systems requirements in mind.<br/>
-To be able to communicate with the node via HTTP API - you should use [CLI/HTTP API wrapper for the node](https://github.com/GEO-Protocol/GEO-node-CLI.git). <br/>
 This API Interface is already included in the [docker image](https://hub.docker.com/u/geoprotocol) [(repo)](https://github.com/GEO-Protocol/docker-client), so there is no need for additional configuration.
 
 <br/>
