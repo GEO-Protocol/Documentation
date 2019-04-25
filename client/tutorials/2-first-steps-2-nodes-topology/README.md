@@ -82,3 +82,18 @@ Node reports sucess as well as some additional parameters that are used for chan
 
 * `channel_id` — ID of the channel, that should be set up on the node `B`.
 * `crypto_key` — **SECRET** key, that must be **securely sent** to the node `B`. This key will not be sent by the GEO Node through GEO Network. Please, be patient! Comprometing this key leads to traffic disclause and ability for third party to change operations flow!
+
+</br>
+
+### Opening CC on node A
+
+```bash
+> curl -X POST "http://172.17.0.3:3000/api/v1/node/contractors/init-channel/?contractor_address=12-172.17.0.2:2000&contractor_id=0&crypto_key=78b2e9736fbdd7b53931b998a42c1ae9f3c4caf3e1f864c93650d2167428a553" -i
+```
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/5.png">
+</p>
+
+As well as previous node, node `B` reports OK and it's internal CC details.
+On this stage nodes has established secret channel for communication.
