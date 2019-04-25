@@ -31,9 +31,9 @@ Please, refer to the [first tutorial](https://github.com/GEO-Protocol/Documentat
 Please, open 2 terminals and perform the next commands in each one:
 
 ```bash
-> sudo docker run -i -t geoprotocol/network-client-beta 172.17.0.2
+> sudo docker run -i -t geoprotocol/network-client-beta 172.17.0.2 # Node A
 
-> sudo docker run -i -t geoprotocol/network-client-beta 172.17.0.3
+> sudo docker run -i -t geoprotocol/network-client-beta 172.17.0.3 # Node B
 ```
 
 <p align="center">
