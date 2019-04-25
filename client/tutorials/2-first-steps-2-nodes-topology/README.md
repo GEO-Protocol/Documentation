@@ -77,3 +77,8 @@ Communication channels are used by nodes to perform secure packets exchange. All
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/4.png">
 </p>
+
+Node reports sucess as well as some additional parameters that are used for channel setup on the counterpart node: `channel_id` and `crypto_key`.
+
+* `channel_id` — ID of the channel, that should be set up on the node `B`.
+* `crypto_key` — **SECRET** key, that must be **securely sent** to the node `B`. This key will not be sent by the GEO Node through GEO Network. Please, be patient! Comprometing this key leads to traffic disclause and ability for third party to change operations flow!
