@@ -197,3 +197,43 @@ Now, let's send $50.
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/11.png">
 </p>
 
+As we can see, node `B` reported Transaction UUID, so the operations was seccessfull.
+Now, let's check max. flow from node `B` to node `A`:
+
+```bash
+> curl -X GET "http://172.17.0.3:3000/api/v1/node/contractors/transactions/max/1/?contractor_address=12-172.17.0.2:2000"
+```
+
+[`Max Flows API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#max-flow-predicition)
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/12.png">
+</p>
+
+Seems to be correct. Node `B` has used 50% of it's trust from node `A`. </br>
+Now let's check the backward max. flow: from node `A` to node `B`:
+
+```bash
+> curl -X GET "http://172.17.0.2:3000/api/v1/node/contractors/transactions/max/1/?contractor_address=12-172.17.0.3:2000"
+```
+
+[`Max Flows API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#max-flow-predicition)
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/13.png">
+</p>
+
+As we can see, now node `A` **is able to send payments to node** `B` and clear the `B's` debt towards it. <br/> Let's try to pay $30 from node `A` to node `B`:
+
+```bash
+> curl -X POST "http://172.17.0.2:3000/api/v1/node/contractors/transactions/1/?contractor_address=12-172.17.0.3:2000&amount=3000"   
+```
+
+[`Payment API Specs`](https://github.com/GEO-Protocol/Documentation/tree/master/client/api-http#payment)
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/14.png">
+</p>
+
+Node `A` reports success as well! Awesome!
+As we can see, the basic mechanics works well and now it is time to go more complex topologies and cases.
