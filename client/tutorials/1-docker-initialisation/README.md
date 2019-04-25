@@ -60,7 +60,7 @@ For Windows/Mac instructions please, refer to the [docker documentation](https:/
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/1-docker-initialisation/resources/2.png">
 </p>
 
-**Please, note the last paramter: `0.0.0.0`!** <br/>
+**Please, note the last parameter: `0.0.0.0`!** <br/>
 This argument specififes the interface on which the node should be available. <br/>
 You should specify this parameter in accordance to your internal network topology. <br/>
 The recommended value for this parameter is `172.17.0.0` if you are planning to run the node in docker's internal network.
