@@ -19,11 +19,11 @@ The overall topology we are going to create looks like this:
 </p>
 
 In this topology, node `A` trusts node `B` **$100**, so node `B` is able to pay to node `A` up to $100. <br/>
-In the same time, node `A` is not able to pay to node `B` because node `B` does not trust to the node `A`. <br/>
+In the same time, node `A` is not able to pay to node `B` because node `B` does not trust to the node `A`.
 
 <br/>
 
-## Step 1: Toplogy creation
+## Step 1: Topology creation
 
 Now we are going to launch the nodes into docker's internal network. <br/>
 Please, refer to the [first tutorial](https://github.com/GEO-Protocol/Documentation/tree/master/client/tutorials/1-docker-initialisation) for the details how to run the container with a node.
@@ -38,8 +38,6 @@ Please, open 2 terminals and perform the next commands in each one:
 
 <p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/1.png">
-</p>
 
-<p align="center">
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/2.png">
 </p>
