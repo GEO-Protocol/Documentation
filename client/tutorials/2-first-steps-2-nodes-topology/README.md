@@ -241,4 +241,4 @@ As we can see, now node `A` **is able to send payments to node** `B` and clear t
 </p>
 
 Node `A` reports success as well! Awesome! <br/>
-As we can see, the basic mechanics works well and now it is time to go more complex topologies and cases.
+As we can see, the basic mechanics works well and now it is time to go to more complex topologies and cases.
