@@ -1,5 +1,8 @@
 # HTTP API of the GEO Node
 
+* [Repository](https://github.com/GEO-Protocol/GEO-node-CLI)
+* [Postman Collection](https://github.com/GEO-Protocol/Documentation/blob/master/client/http-api/GEO%20node%20HTTP%20interface.postman_collection.json)
+
 ## Node communication
 There are 3 possible ways to communicate to the GEO node:
 1. **Via low-level GEO Node protocol** <br/>
@@ -26,7 +29,6 @@ This API Interface is already included in the [docker image](https://hub.docker.
 <br/>
 
 # API methods (v1)
-This API collection is available as [Postman Collection](https://github.com/GEO-Protocol/Documentation/blob/master/client/http-api/GEO%20node%20HTTP%20interface.postman_collection.json).
 
 <br/>
 
