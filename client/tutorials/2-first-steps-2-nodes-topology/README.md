@@ -41,3 +41,10 @@ Please, open 2 terminals and perform the next commands in each one:
 
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/2.png">
 </p>
+
+
+Now we should ensure, that 2 containers are running in internal network:
+
+<p align="center">
+  <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/2-first-steps-2-nodes-topology/resources/3.png">
+</p>
