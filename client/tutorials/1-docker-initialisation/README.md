@@ -71,6 +71,8 @@ In case if there is no host address specififed - the entrypoint script would rep
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/1-docker-initialisation/resources/3.png">
 </p>
 
+WARN: At the moment, current release supports only static IPv4 addresses, so keep it in mind on the network topology design stage.
+
 <br/>
 
 # Step 4: Internal container structure
