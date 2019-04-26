@@ -16,3 +16,8 @@ due to the limitations of concurent commands processing, and relatively high res
 This interface provides ability to communicate with node via HTTP API and to process more than one command at a time. 
 It is useful during development, and also might be considered to be used in production environments, 
 that are configured for communication with only one, or several nodes.
+
+
+# Tutorials and HowTo's
+
+Here we collected some [helpful materials](https://github.com/GEO-Protocol/Documentation/tree/master/client/tutorials) you can follow to spin your own GEO Node fast and furious. 

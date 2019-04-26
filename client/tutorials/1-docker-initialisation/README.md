@@ -9,7 +9,7 @@ Please, follow it carefully because this instructions are used as a base phase f
 
 # Step 1: Installing docker
 First of all, you should install docker on your host machine.
-Usually it is provided as OS package for most popular Linux Distributions.
+Usually it is provided as OS package for most popular Linux distributions.
 Here are several useful links, that might be helpful in case if your host OS is Linux:
 
 * [How To Install and Use Docker on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
@@ -39,8 +39,8 @@ At the moment of writing this docs, only BETA release of GEO Node is available i
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/1-docker-initialisation/resources/1.png">
 </p>
 
-In our case the image is already pulled so docker will only checks it and reports success.
-In your case, it is most probable, that docker would pull sevaral images and will build the final one, but the final result would be the same.
+In our case the image is already pulled so docker will only check it and report success.
+In your case, it is most probable, that docker would pull several images and will build the final one on top of them, but the final result would be the same.
 
 Current image contains configured node and it's HTTP API wrapper, so no additional configuration is needed.
 
@@ -60,10 +60,10 @@ For Windows/Mac instructions please, refer to the [docker documentation](https:/
   <img src="https://github.com/GEO-Protocol/Documentation/blob/master/client/tutorials/1-docker-initialisation/resources/2.png">
 </p>
 
-**Please, note the last paramter: `0.0.0.0`!** <br/>
+**Please, note the last parameter: `0.0.0.0`!** <br/>
 This argument specififes the interface on which the node should be available. <br/>
 You should specify this parameter in accordance to your internal network topology. <br/>
-The recommended value for this parameter is `172.17.0.0` if you are planning to run the node in docker's internal network.
+The recommended value for this parameter is `172.17.0.2` if you are planning to run the node in docker's internal network.
 
 In case if there is no host address specififed - the entrypoint script would report an error.
 
