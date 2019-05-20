@@ -35,7 +35,7 @@ Afterward, you might be interested in the exact problem GEO solves. This [articl
 Furthermore, there are also a few articles which describe the existing problems in crypto and fintech industry. This [article](https://hackernoon.com/how-off-chain-solutions-can-become-a-tcp-ip-for-the-internet-of-money-17a58922d93b) will show you how the existing finance industry is similar to the Internet in 1960th - 70th in terms of interoperability and fragmentation. And [this one](https://medium.com/geoprotocol/the-need-for-layer-3-on-the-internet-of-value-2a62f8e93160) will give you an understanding of what could be called “Layer 3 solutions”
 
 **10. What is GEO-Pay?**
-[GEO_Pay](https://geo-pay.net/) is the first production usage of our technology. It is the first service that uses GEO Protocol as the main technical framework. 
+[GEO-Pay](https://geo-pay.net/) is the first production usage of our technology. It is the first service that uses GEO Protocol as the main technical framework. 
 
 **11. Who is in your team?**
 On GEO Protocol development are working 18 specialists - analytics, developers and marketers. However, our team is not yet totally formed. We seek for C++ developers, security analysts, cryptographers economists, and/or data scientists. If you are a hard-working and responsible person - feel free to write to us on jobs@geoprotocol.io.
