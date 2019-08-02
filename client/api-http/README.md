@@ -666,7 +666,7 @@ GET http://127.0.0.1:1502/api/v1/node/contractors/transactions/max/1/?contractor
 <br/>
 
 
-#### Payment
+## Payments / Transactions issuing
 
 ```
 POST /api/v1/node/contractors/transactions/{equivalent}/
@@ -732,7 +732,7 @@ POST http://127.0.0.1:1502/api/v1/node/contractors/transactions/1/?contractor_ad
 <br/>
 
 
-## Paymens History
+## Payments History
 
 ```
 GET /api/v1/node/history/transactions/payments/{offset}/{count}/{equivalent}/
